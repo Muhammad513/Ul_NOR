@@ -1,25 +1,27 @@
-$(document).ready(function() {
+(function () {
+	"use strict";
 
-    var state = false;
+	var treeviewMenu = $('.app-menu');
 
-    //$("input:text:visible:first").focus();
+	// Toggle Sidebar
+	$('[data-toggle="sidebar"]').click(function(event) {
+		event.preventDefault();
+		$('.app').toggleClass('sidenav-toggled');
+	});
 
-    $('#accesspanel').on('submit', function(e) {
+	// Activate sidebar treeview toggle
+	$("[data-toggle='treeview']").click(function(event) {
+		event.preventDefault();
+		if(!$(this).parent().hasClass('is-expanded')) {
+			treeviewMenu.find("[data-toggle='treeview']").parent().removeClass('is-expanded');
+		}
+		$(this).parent().toggleClass('is-expanded');
+	});
 
-        e.preventDefault();
+	// Set initial active toggle
+	$("[data-toggle='treeview.'].is-expanded").parent().toggleClass('is-expanded');
 
-        state = !state;
+	//Activate bootstrip tooltips
+	$("[data-toggle='tooltip']").tooltip();
 
-        if (state) {
-            document.getElementById("litheader").className = "poweron";
-            document.getElementById("go").className = "";
-            document.getElementById("go").value = "Initializing...";
-        }else{
-            document.getElementById("litheader").className = "";
-            document.getElementById("go").className = "denied";
-            document.getElementById("go").value = "Access Denied";
-        }
-
-    });
-
-});
+})();
