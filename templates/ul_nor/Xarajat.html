@@ -1,0 +1,35 @@
+{% extends 'ul_nor/dashboard.html' %}
+
+{% block content %}
+<main class="app-content">
+    <div class="app-title">
+        <form  method="post">
+            <div class="ui form">
+                <div class="fields">
+                <div class="field">
+                    <label>Сана</label>
+                    {{form.date}}
+                </div>
+                <div class="field">
+                    <label>Харажат тури</label>
+                    {{form.name}}
+                </div>
+                <div class="field">
+                    <label>Сумма</label>
+                    {{form.summ}}
+                </div>
+                <div class="field">
+                    <label>Сумма</label>
+                    {{form.comment}}
+                </div>
+                
+                </div>
+            </div>
+        </form>
+    
+    
+    
+    
+    </div>
+</main>  
+{% endblock %}
