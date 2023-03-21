@@ -6,11 +6,10 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4 col-md-4 col-lg-4  col-sm-12 pt-4">
+                <div class="col-md-4 col-lg-4  col-sm-12 pt-4">
                     <form  method="post">
                         {% csrf_token %}
                         <div class="ui form ">
-                            <div class="two fields">
                             <div class="field">
                                 <label>САНА</label>
                                 {{form.date}}
@@ -19,29 +18,24 @@
                                 <label>Харажат тури</label>
                                 {{form.name}}
                             </div>
-                            </div>
-                            <div class="two fields">
-                                <div class="field">
+                            <div class="field">
                                 <label>Сумма</label>
                                 {{form.summ}}
-                                </div>
-                                <div class="field">
+                            </div>
+                            <div class="field">
                                 <label>Манбаси</label>
                                 {{form.manba}}
-                                </div>
                             </div>
-                            <div class="one fields">
-                                <div class="field">
+                            <div class="field">
                                 <label>Камментария</label>
                                 {{form.comment}}
                                 </div>
                             </div>
-                        </div>
                         <button class="fluid ui button bg-info">YUBORISH</button>    
                     </form>
                 </div>
                 <hr>
-                <div class="col-md-8 col-lg-8 col-sm-12 pl-5 pt-5">
+                <div class="d-none d-sm-block d-md-none d-lg-block col-md-8 col-lg-8 col-sm-12 pl-5 pt-5">
                 
                     {% include 'ul_nor/table.html' %}
 
