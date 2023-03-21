@@ -3,33 +3,54 @@
 {% block content %}
 <main class="app-content">
     <div class="app-title">
-        <form  method="post">
-            <div class="ui form">
-                <div class="fields">
-                <div class="field">
-                    <label>Сана</label>
-                    {{form.date}}
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 pt-4">
+                    <form  method="post">
+                        {% csrf_token %}
+                        <div class="ui form ">
+                            <div class="two fields">
+                            <div class="field">
+                                <label>САНА</label>
+                                {{form.date}}
+                            </div>
+                            <div class="field">
+                                <label>Харажат тури</label>
+                                {{form.name}}
+                            </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                <label>Сумма</label>
+                                {{form.summ}}
+                                </div>
+                                <div class="field">
+                                <label>Манбаси</label>
+                                {{form.manba}}
+                                </div>
+                            </div>
+                            <div class="one fields">
+                                <div class="field">
+                                <label>Камментария</label>
+                                {{form.comment}}
+                                </div>
+                            </div>
+                        </div>
+                        <button class="fluid ui button bg-info">YUBORISH</button>    
+                    </form>
                 </div>
-                <div class="field">
-                    <label>Харажат тури</label>
-                    {{form.name}}
-                </div>
-                <div class="field">
-                    <label>Сумма</label>
-                    {{form.summ}}
-                </div>
-                <div class="field">
-                    <label>Сумма</label>
-                    {{form.comment}}
-                </div>
+                <hr>
+                <div class="col-8 pl-5 pt-5">
                 
+                    {% include 'ul_nor/table.html' %}
+
+
+
                 </div>
             </div>
-        </form>
-    
-    
-    
-    
+        </div>
+        
     </div>
 </main>  
 {% endblock %}

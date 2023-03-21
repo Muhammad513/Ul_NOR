@@ -1,0 +1,30 @@
+<div class="table-responsive">
+    <table class="table table-sm table-bordered text-center">
+        <thead>
+          <tr>
+            <th class="align-middle" scope="col">№</th>
+            <th class="align-middle" scope="col">Сана</th>
+            <th class="align-middle" scope="col">Харажат тури</th>
+            <th class="align-middle" scope="col">Сумма</th>
+            <th class="align-middle" scope="col">Манбаси</th>
+            <th class="align-middle" scope="col">Коментария</th>
+            <th class="align-middle" scope="col">User</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            {% for i in xarajat %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.summ}}</td>
+                <td>{{i.manba}}</td>
+                <td>{{i.comment}}</td>
+                <td>{{i.user}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>    
+        
+      </table>
+  </div>

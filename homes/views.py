@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from .models import*
 from .form import XarajatForm
 
 def homes(request):
@@ -7,15 +8,15 @@ def homes(request):
 
 
 def xarajat(request):
-    user=request.user.id
-    form=XarajatForm(user)
+    xarajat=Xarajatlar.objects.all().order_by('-id')[0:10]
+    profil=request.user.id
+    print(profil)
+    form=XarajatForm()
     if request.method == "POST":
-        forms=XarajatForm(user,request.POST)
+        forms=XarajatForm(request.POST)
         if forms.is_valid():
-            formsets=forms.save(commit=False)
-            formsets.user=user
-            formsets.save()
+            forms.save()
             return redirect('xarajat')
     
-    context={"form":form}
+    context={"form":form,"xarajat":xarajat}
     return render(request,'ul_nor/Xarajat.html',context)

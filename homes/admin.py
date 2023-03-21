@@ -1,4 +1,4 @@
 from django.contrib import admin
 from .models import*
 # Register your models here.
-admin.site.register([Xarajatlar,XarajatTuri])
+admin.site.register([Xarajatlar,XarajatTuri,Bank])
