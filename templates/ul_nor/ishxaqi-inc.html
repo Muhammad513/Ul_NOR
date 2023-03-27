@@ -15,7 +15,7 @@
             {% for i in ishxaqqi %}
             <tr>
                 <td>{{i.id}}</td>
-                <td>{{i.date}}</td>
+                <td>{{i.date|date:"d.m.Y" }}</td>
                 <td>{{i.hodim}}</td>
                 <td>{{i.summa}}</td>
                 <td>{{i.comment}}</td>

@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import*
 from .form import XarajatlarForm,IshxaqiForm
-
+import requests
 def homes(request):
     
     return render(request,'ul_nor/dashboard.html')
@@ -23,6 +23,7 @@ def xarajat(request):
 
 
 def ishxaqi(request):
+    
     ishxaqqi=IshxaqiXarajati.objects.all().order_by('-id')[0:10]
     form=IshxaqiForm()
     if request.method == "POST":
