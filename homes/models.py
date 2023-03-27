@@ -28,4 +28,20 @@ class Xarajatlar(models.Model):
     def __str__(self) -> str:
         return str(self.name)
 
-    
+class Hodim(models.Model):
+    fname=models.CharField(max_length=20)
+    lname=models.CharField(max_length=20)
+    oname=models.CharField(max_length=20)
+    jshir=models.CharField(max_length=14)
+    pasport=models.CharField(max_length=9)
+
+    def __str__(self) -> str:
+        return str(f'{self.fname} {self.lname} {self.oname}')
+
+class IshxaqiXarajati(models.Model):
+    date=models.DateField(null=True,blank=True)
+    hodim=models.ForeignKey('Hodim',on_delete=models.PROTECT)
+    summa=models.FloatField()
+    comment=models.TextField()
+
+

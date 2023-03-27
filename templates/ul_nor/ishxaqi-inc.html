@@ -1,0 +1,28 @@
+<div class="table-responsive">
+    <table class="table table-sm table-bordered text-center">
+        <thead>
+          <tr>
+            <th class="align-middle" scope="col">№</th>
+            <th class="align-middle" scope="col">Сана</th>
+            <th class="align-middle" scope="col">Ходим</th>
+            <th class="align-middle" scope="col">Сумма</th>
+            <th class="align-middle" scope="col">Коментария</th>
+            <th class="align-middle" scope="col">User</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            {% for i in ishxaqqi %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.hodim}}</td>
+                <td>{{i.summa}}</td>
+                <td>{{i.comment}}</td>
+                <td>---</td>
+            </tr>
+            {% endfor %}
+        </tbody>    
+        
+      </table>
+  </div>

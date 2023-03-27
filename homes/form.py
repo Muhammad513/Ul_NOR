@@ -16,3 +16,14 @@ class XarajatlarForm(forms.ModelForm):
             'comment':forms.Textarea(attrs={'rows':'2'})
         }
     
+
+class IshxaqiForm(forms.ModelForm):
+   
+    class Meta:
+        model=IshxaqiXarajati
+        fields=('date',"hodim",'summa','comment',)
+        widgets={
+            'date':forms.TextInput(attrs={'type':'date','value':date}),
+            'comment':forms.Textarea(attrs={'rows':'2'})
+        }
+        

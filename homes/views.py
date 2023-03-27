@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import*
-from .form import XarajatlarForm
+from .form import XarajatlarForm,IshxaqiForm
 
 def homes(request):
     
@@ -20,3 +20,16 @@ def xarajat(request):
     
     context={"form":form,"xarajat":xarajat}
     return render(request,'ul_nor/Xarajat.html',context)
+
+
+def ishxaqi(request):
+    ishxaqqi=IshxaqiXarajati.objects.all().order_by('-id')[0:10]
+    form=IshxaqiForm()
+    if request.method == "POST":
+        forms=IshxaqiForm(request.POST)
+        if forms.is_valid():
+            forms.save()
+            return redirect('ishxaqi')
+    
+    context={"form":form,"ishxaqqi":ishxaqqi}
+    return render(request,'ul_nor/ishxaqi.html',context)    
