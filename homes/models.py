@@ -1,7 +1,7 @@
 from django.db import models
 import datetime
 from django.contrib.auth.models import User
-
+import datetime
 
 class Bank(models.Model):
     name=models.CharField(max_length=20)
@@ -19,7 +19,7 @@ class XarajatTuri(models.Model):
 
 class Xarajatlar(models.Model):
     user=models.ForeignKey(User,on_delete=models.PROTECT,null=True,blank=True)
-    date=models.DateField()
+    date=models.DateField(blank=True,null=True)
     name=models.ForeignKey('XarajatTuri',on_delete=models.PROTECT)
     summ=models.FloatField()
     manba=models.ForeignKey('Bank',on_delete=models.PROTECT ,null=True)
@@ -27,3 +27,5 @@ class Xarajatlar(models.Model):
 
     def __str__(self) -> str:
         return str(self.name)
+
+    
