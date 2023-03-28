@@ -30,11 +30,47 @@
     <header class="app-header"><a class="app-header__logo" href="{% url 'home' %}">UL-NOR BREND</a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <!-- Navbar Right Menu-->
+      
       <ul class="app-nav">
         <li class="app-search">
-          <input class="app-search__input" type="search" placeholder="Излаш ...">
-          <button class="app-search__button"><i class="fa fa-search"></i></button>
+          {% for i in r1 %}
+          <div class="ui labeled button mini" tabindex="0">
+            <div class="ui button">
+              <i class="dollar sign icon"></i> {{i.Rate}}
+            </div>
+            <a class="ui basic label">
+              USD
+            </a>
+          </div>
+          {% endfor %}
         </li>
+        <li class="app-search">
+          {% for i in r2 %}
+          <div class="ui labeled button mini" tabindex="0">
+            <div class="ui button">
+              <i class="euro sign icon"></i>{{i.Rate}}
+            </div>
+            <a class="ui basic label">
+              EURO
+            </a>
+          </div>
+          {% endfor %}
+        </li>
+        <li class="app-search">
+          {% for i in r3 %}
+          <div class="ui labeled button mini text-danger " tabindex="0">
+            <div class="ui button">
+              <i class="ruble sign icon"></i>{{i.Rate}}
+            </div>
+            <a class="ui basic label">
+              RUB    
+            </a>
+          </div>
+          {% endfor %}
+        </li>
+
+        
+        
         <!--Notification Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Show notifications"><i class="fa fa-bell-o fa-lg"></i></a>
           <ul class="app-notification dropdown-menu dropdown-menu-right">
@@ -77,6 +113,7 @@
           </ul>
         </li>
         <!-- User Menu-->
+        
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li><a class="dropdown-item" href=""><i class="fa fa-cog fa-lg"></i>Созламалар</a></li>
@@ -108,7 +145,7 @@
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="{% url 'xarajat' %}"><i class="icon fa fa-circle-o"></i>У&nbsp;м&nbsp;у&nbsp;м&nbsp;и&nbsp;й&nbsp;&nbsp;&nbsp;X&nbsp;a&nbsp;р&nbsp;a&nbsp;ж&nbsp;a&nbsp;т&nbsp;</a></li>
             <li><a class="treeview-item" href="{% url 'ishxaqi' %}"><i class="icon fa fa-circle-o"></i>И&nbsp;ш&nbsp;х&nbsp;а&nbsp;к&nbsp;к&nbsp;и&nbsp;&nbsp;&nbsp;Х&nbsp;а&nbsp;р&nbsp;ж&nbsp;a&nbsp;т</a></li>
-            <li><a class="treeview-item" href="{% url 'ishxaqi' %}"><i class="icon fa fa-circle-o"></i>&nbsp;В&nbsp;А&nbsp;Л&nbsp;Ю&nbsp;Т&nbsp;А&nbsp;</a></li>
+            <li><a class="treeview-item" href="{% url 'valyuta' %}"><i class="icon fa fa-circle-o"></i>&nbsp;В&nbsp;А&nbsp;Л&nbsp;Ю&nbsp;Т&nbsp;А&nbsp;</a></li>
             <li><a class="treeview-item" href="{% url 'ishxaqi' %}"><i class="icon fa fa-circle-o"></i>11</a></li>
           
           </ul>
